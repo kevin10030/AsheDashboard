@@ -1,0 +1,351 @@
+﻿@using DeviceSM1.Models.Table;
+@model dynamic
+@{
+    ViewData["Title"] = "Rapphie";
+}
+
+@*<h2 style="opacity:0">@ViewData["Title"]</h2>*@
+<div class="container-fluid " style="padding:0px">
+    <div class="row mr-lg-3" style="margin:0px">
+        
+        <div class="col-lg-10 ml-lg-5 main-panel" style="padding-left:0px;padding-right:5px" >
+            <div class="row top-title" style="margin-top:15px;padding-left:5px">
+                <div class="col-md-6" style="padding-left:25px">
+                    <h2>Dashboard</h2>
+                </div>
+                @*
+    <div class="col-md-3" style="margin-top:10px">
+        Fixed:
+        <span class="top-fixed">170</span>
+    </div>
+    <div class="col-md-3" style="margin-top:10px">
+        Pending:
+        <span class="top-pre">50</span>
+    </div>
+                *@
+            </div>
+            
+            <div class="row m-lg-3 ">
+                <div class="col-lg-4 col-md-4 mb-3 ">
+                    <div class="panel dash-shadow rounded" style="background:#58E2ED">
+                        <div class="panel-heading">
+                            <div class="d-flex bd-highlight">
+                                <div class="p-2 flex-fill bd-highlight ml-lg-3">
+                                    <div class="h3 text-white ml-2 mb-3" id="pressure_value">00</div>
+                                    <div class="text-white m-2">Pressure</div>
+                                </div>
+                                <div class="p-2 flex-fill mt-2 ">
+                                    <img src="~/images/box_icon1.png" alt="" />
+                                </div>
+                            </div>
+                        </div>
+                        <a href="" style="color: #e9edf1;text-align:center">
+                            <div class="panel-footer dash-shadow rounded-bottom" style="background:#3BC4E6;">
+                                <span class="home-icon">More Info</span>
+                                <span class="home-icon"><i class="fa fa-arrow-circle-right"></i></span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 mb-3 ">
+                    <div class="panel dash-shadow rounded" style="background:#00A65A;">
+                        <div class="panel-heading">
+                            <div class="d-flex bd-highlight">
+                                <div class="p-2 flex-fill bd-highlight ml-lg-3">
+                                    <div class="h3 text-white ml-2 mb-3" id="temperature_value">00</div>
+                                    <div class="text-white m-2">Temperature</div>
+                                </div>
+                                <div class="p-2 flex-fill ">
+                                    <img src="~/images/box_icon2.png" alt="" />
+                                </div>
+                            </div>
+                        </div>
+                        <a href="" style="color: #e9edf1;text-align:center">
+                            <div class="panel-footer dash-shadow rounded-bottom" style="background:#00964F;">
+                                <span class="home-icon">More Info</span>
+                                <span class="home-icon"><i class="fa fa-arrow-circle-right"></i></span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 mb-3">
+                    <div class="panel dash-shadow rounded" style="background:#FF8500;">
+                        <div class="panel-heading">
+                            <div class="d-flex bd-highlight">
+                                <div class="p-2 flex-fill bd-highlight ml-lg-3">
+                                    <div class="h3 text-white ml-2 mb-3" id="humidity_value">00</div>
+                                    <div class="text-white m-2">Humidity</div>
+                                </div>
+                                <div class="p-2 flex-fill ">
+                                    <img src="~/images/box_icon3.png" alt="" />
+                                </div>
+                            </div>
+                        </div>
+                        <a href="" style="color: #e9edf1;text-align:center">
+                            <div class="panel-footer dash-shadow rounded-bottom" style="background:#cc8b15;">
+                                <span class="home-icon">More Info</span>
+                                <span class="home-icon"><i class="fa fa-arrow-circle-right"></i></span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="row m-lg-3 ">
+                <div class="col-lg-4 col-md-4 mb-3 ">
+                    <div class="panel dash-shadow rounded" style="background:#58E2ED">
+                        <div class="panel-heading">
+                            <div class="d-flex bd-highlight">
+                                <div class="p-2 flex-fill bd-highlight ml-lg-3">
+                                    <div class="h3 text-white ml-2 mb-3" id="moisture_value">00</div>
+                                    <div class="text-white m-2">Moisture</div>
+                                </div>
+                                <div class="p-2 flex-fill ">
+                                    <img src="~/images/box_icon4.png" alt="" />
+                                </div>
+                            </div>
+                        </div>
+                        <a href="" style="color: #e9edf1;text-align:center">
+                            <div class="panel-footer dash-shadow rounded-bottom" style="background:#3BC4E6;">
+                                <span class="home-icon">More Info</span>
+                                <span class="home-icon"><i class="fa fa-arrow-circle-right"></i></span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 mb-3 ">
+                    <div class="panel dash-shadow rounded" style="background:#00A65A;">
+                        <div class="panel-heading">
+                            <div class="d-flex bd-highlight">
+                                <div class="p-2 flex-fill bd-highlight ml-lg-3">
+                                    <div class="h3 text-white ml-2 mb-3" id="liquid_value">00</div>
+                                    <div class="text-white m-2"><span>Liquid</span><span style="opacity:0">1</span><span>flow</span> </div>
+                                </div>
+                                <div class="p-2 flex-fill ">
+                                    <img src="~/images/box_icon5.png" alt="" />
+                                </div>
+                            </div>
+                        </div>
+                        <a href="" style="color: #e9edf1;text-align:center">
+                            <div class="panel-footer dash-shadow rounded-bottom" style="background:#00964F;">
+                                <span class="home-icon">More Info</span>
+                                <span class="home-icon"><i class="fa fa-arrow-circle-right"></i></span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 mb-3">
+                    <div class="panel dash-shadow rounded" style="background:#FF8500;">
+                        <div class="panel-heading">
+                            <div class="d-flex bd-highlight">
+                                <div class="p-2 flex-fill bd-highlight ml-lg-3">
+                                    <div class="h3 text-white ml-2 mb-3" id="co2_value">00</div>
+                                    <div class="text-white m-2">CO2</div>
+                                </div>
+                                <div class="p-2 flex-fill ">
+                                    <img src="~/images/box_icon6.png" alt="" />
+                                </div>
+                            </div>
+                        </div>
+                        <a href="" style="color: #e9edf1;text-align:center">
+                            <div class="panel-footer dash-shadow rounded-bottom" style="background:#cc8b15;">
+                                <span class="home-icon">More Info</span>
+                                <span class="home-icon"><i class="fa fa-arrow-circle-right"></i></span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row my-3 ml-lg-3 mr-lg-1 mt-lg-5">
+                <div class="col-md-12">
+                    <table id="tblAlert" class="table table-sm table-bordered dash-shadow">
+                        <thead class="text-white" style="background-color: #45a783;">
+                            <tr>
+                                @*<td width="8%" align="center" valign="middle">Alert<br /> No</td>
+                                <td width="10%" align="center" valign="middle">Location</td>
+                                <td width="11%" align="center" valign="middle">IMEI</td>
+                                <td width="10%" align="center" valign="middle">Customer Name</td>
+                                <td width="10%" align="center" valign="middle">Time</td>*@
+                                <td width="4%">No</td>
+                                <td width="10%" >Location</td>
+                                <td width="12%">IMEI</td>
+                                <td width="5%">Customer</td>
+                                <td width="20%">Time</td>
+                                <td width="21%">
+                                    <img src="~/images/box_icon1.png" width='25' height='25' alt="" />
+                                    <img src="~/images/box_icon2.png" width='25' height='25' alt="" />
+                                    <img src="~/images/box_icon3.png" width='25' height='25' alt="" />
+                                    <img src="~/images/box_icon4.png" width='25' height='25' alt="" />
+                                    <img src="~/images/box_icon5.png" width='25' height='25' alt="" />
+                                    <img src="~/images/box_icon6.png" width='25' height='25' alt="" />
+                                </td>
+                                <td>Device Relay</td>
+                                @*<th class=""><img src="~/images/box_icon1.png" width='25' height='25' alt="" /> </th>
+                                <th class=""><img src="~/images/box_icon2.png" width='25' height='25' alt="" /> </th>
+                                <th class=""><img src="~/images/box_icon3.png" width='25' height='25' alt="" /> </th>
+                                <th class=""><img src="~/images/box_icon4.png" width='25' height='25' alt="" /> </th>
+                                <th class=""><img src="~/images/box_icon5.png" width='25' height='25' alt="" /> </th>
+                                <th class=""><img src="~/images/box_icon6.png" width='25' height='25' alt="" /> </th>*@
+                                @*<td width="20%" align="center" valign="middle">Alert Type</td>
+                                <td align="center" valign="middle">Device<br>Command</td>
+                                <td width="9%" align="center" valign="middle">Server Reply</td>*@
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg right-main-panel" style="padding:0px">
+            <div class="ml-auto mt-3 mb-3 mr-1" style="display: none;">
+                <span style="opacity:0">0</span>
+                <button id="relay_on" class="btn-other btn-sm btn-w"> <span><img src="~/images/on_icon.png" alt="" />  </span>Relay On</button>
+                <span style="opacity:0">000</span>
+                <button id="relay_off" class="btn-other btn-sm btn-w"> <span><img src="~/images/off_icon.png" alt="" />  </span>Relay Off</button>
+            </div>
+            @{ var activeCount = 0; }
+            @{ var inactiveCount = 0;}
+            @foreach (var Device in Model.Devices)
+            {
+                if (Device.Status == 1) { activeCount++; }
+                else { inactiveCount++; }
+            }
+            <div class="ml-auto mt-3 mb-3 mr-1">
+                <div class="d-inline-block p-2 mr-0 w-50" style="background: indianred; text-align:center; line-height: 2!important; border-color:indianred;">Active: @activeCount</div>
+                <div class="d-inline-block p-2 w-50" style="background: green; line-height: 2!important;text-align:center; border-color:green; margin-left: -5px">Inactive: @inactiveCount</div>
+            </div>
+            <div style="background:#000000;height:1px"></div>
+            <div class="col-12" style="list-style-type:none !important;padding:0px" >
+                <div class="right_manu_area" style="margin:0px;line-height: 15px;" >
+                    <ul class="cd-accordion-menu animated">
+                        <li class="has-children">
+                            <input type="checkbox" name="group-2" id="group-2">
+                            <label for="group-2" style="margin-bottom:0px">Location</label>
+                            <ul>
+                                    @{ var j = 0;}
+                                    @foreach (var Location in Model.Locations)
+                                    {
+                                        j++;
+                                        <li class="selectable-li">
+                                            <label for="sub-group-2-@j" class="location-label" style="line-height: 12px; margin-bottom: 0px !important; padding-top: 10px;">                                                 
+                                               @Location.Name
+                                                <input type="checkbox" location-id="@Location.Id" class="location-checkbox" style="margin-top: -10px !important;" value="@Location.Id"/>
+                                                @*<a href="#" class="customer_select_area_arrow customer_select_tab3"><img src="images/down_arrow.png" alt="" /></a>*@
+                                            </label>
+                                        </li>
+                                    }
+                            </ul>
+                        </li>
+                        <li class="has-children">
+                            <input type="checkbox" name="group-3" id="group-3">
+                            <label for="group-3" style="margin-bottom:0px">DeviceType</label>
+                            <ul>
+                                @{ j = 0;}
+                                @foreach (var DeviceType in Model.DeviceTypes)
+                                {
+                                    j++;
+                                    <li class="selectable-li">
+                                        @*<input type="checkbox" name="sub-group-3-@j" id="sub-group-3-@j">*@
+                                        <label for="sub-group-3-@j" class="device-type-label" style="line-height: 12px; margin-bottom: 0px !important; padding-top: 10px;">
+                                            @DeviceType.Name
+                                            <input type="checkbox" device-type-id="@DeviceType.Id" class="device-type-checkbox" style="margin-top: -10px !important;" value="@DeviceType.Id"/>
+                                        </label>
+                                    </li>
+                                 }
+                                </ul>
+                            </li>
+                            <li class="has-children">
+                                <input type="checkbox" name="group-4" id="group-4">
+                                <label for="group-4" style=" margin-bottom:0px">Customer</label>
+                                <ul class="user-ul">
+                                    @{ j = 0;}
+                                    @foreach (var User in Model.Users)
+                                    {
+                                        j++;
+                                        <li class="has-children">
+                                            <input type="checkbox" name="sub-group-4-@j" id="sub-group-4-@j" value="@User.Id">
+                                            <label for="sub-group-4-@j" style="margin-bottom:0px">
+                                                @User.UserName
+                                                @*<input type="checkbox" name="sub-group-4-@j" id="sub-group-4-@j" user-id="@User.Id" class="user-checkbox" value="@User.Id" />*@
+                                            </label>
+                                            <ul class="user-device-ul">
+                                                @{ var jj = 0;}
+                                                @foreach (var Device in Model.Devices)
+                                                {
+                                                    @if (Device.UserId == User.Id)
+                                                    {
+                                                        jj++;
+                                                        <li class="has-children" style="margin-bottom:0px">
+                                                            <input type="checkbox" name="sub-group-4-@j-@jj" id="sub-group-4-@j-@jj" >
+                                                            <label for="sub-group-4-@j-@jj" style="line-height: 6px; margin-bottom: 0px !important; "> <input type="checkbox" class="inner_checkbox device-checkbox" style="margin-top: -2px !important;" value="@Device.Id"/>@Device.IMEI</label>
+                                                            <ul class="@Device.IMEI">
+                                                                @*@{ var jjj = 0;}*@
+                                                                @for (var jjj = 1; jjj <=6; jjj++)
+                                                                {
+                                                                    @foreach (var Sensor in Device.Sensors)
+                                                                    {
+                                                                        if (Sensor.RelayMapping == jjj)
+                                                                        {
+                                                                            @if (Sensor.Status == 0)
+                                                                            {
+                                                                                <li class="sensor-checkbox-li" sensor-num="@Sensor.SensorTypeId" id="sensor-@Device.IMEI-@jjj" style="line-height: 6px; margin-bottom: 0px !important; ">
+                                                                                    <a href="#0"><input type="checkbox" class="inner_checkbox sensor-checkbox"  style="margin-top: -1px !important;" name="sub-group-4-@j-@jj-@jjj" id="sub-group-4-@j-@jj-@jjj" device-imei="@Device.IMEI" sensor-type-id="@Sensor.SensorTypeId" sensor-relay-mapping="@jjj" value="@Sensor.Id"/> R<h>@jjj</h><span><img src="~/images/off_icon.png" alt="" /> Turn Off</span></a>
+                                                                                </li>
+                                                                            }
+                                                                            else
+                                                                            {
+                                                                                <li class="sensor-checkbox-li" sensor-num="@Sensor.SensorTypeId" id="sensor-@Device.IMEI-@jjj" style="line-height: 6px; margin-bottom: 0px !important; " >
+                                                                                    <a href="#0"><input type="checkbox" class="inner_checkbox sensor-checkbox" style="margin-top: -1px !important;" name="sub-group-4-@j-@jj-@jjj" id="sub-group-4-@j-@jj-@jjj" device-imei="@Device.IMEI" sensor-type-id="@Sensor.SensorTypeId" sensor-relay-mapping="@jjj" value="@Sensor.Id" checked/> R<h>@jjj</h><span><img src="~/images/on_icon.png" alt="" /> Turn On</span></a>
+                                                                                </li>
+                                                                            }
+                                                                        }
+                                                                     }
+                                                                 }
+                                                            </ul>
+
+                                                        </li>
+                                                     }
+                                                 }
+                                            </ul>
+                                        </li>
+                                     }
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    @section Styles {
+        <link href="~/css/right_slide_menu.css" rel="stylesheet" />
+        <link href="~/plugins/dataTables/jquery.dataTables.min.css" rel="stylesheet" />
+        <link href="~/plugins/dataTables/select.dataTables.min.css" rel="stylesheet" />
+    }
+
+    @section Scripts  {
+        <script src="~/plugins/jquery/dist/jquery.min.js"></script>
+        <script src="~/plugins/dataTables/jquery.dataTables.min.js"></script>
+        <script src="~/plugins/dataTables/dataTables.select.min.js"></script>
+        <script src="~/plugins/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="~/js/WebSocketManager.js"></script>
+        <script type="text/javascript" src="~/js/Home/index.js" defer></script>
+        
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
